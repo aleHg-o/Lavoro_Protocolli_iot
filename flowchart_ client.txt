@@ -1,0 +1,38 @@
+                +-------------------+      FLOWCHART CLIENT 
+                |     Inizio        |	   FUNZIONAMENTO DELL'APPLICAZIONE LATO CASETTA
+                +-------------------+
+                        |
+                        v
+                +-------------------+
+                |  Inizializza      |
+                |  Sensori & MQTT   |
+                +-------------------+
+                        |
+                        v
+                +-------------------+
+                |  Raccolta dati    |
+                |  (Temperatura,    |
+                |   Stato Luce)     |
+                +-------------------+
+                        |
+                        v
+                +-------------------+
+                |   Invia Dati al   |
+                |   Server MQTT     |
+                +-------------------+
+                        |
+                        v
+                +-------------------+
+                |   Attendere...    |
+                |   (Delay)         |
+                +-------------------+
+                        |
+                        v
+                +-------------------+
+                |    Ripeti Ciclo   |
+                +-------------------+
+                        |
+                        v
+                +-------------------+
+                |       Fine         |
+                +-------------------+
