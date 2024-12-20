@@ -1,0 +1,51 @@
+1. Avvia il Programma
+   |
+   v
+2. Configura il Protocollo AMQP:
+   - Imposta la stringa di connessione AMQP
+   - Configura il factory RabbitMQ
+   |
+   v
+3. Crea Sensori Virtuali:
+   - Aggiungi VirtualWaterTempSensor alla lista
+   - Aggiungi VirtualLightSensor alla lista
+   |
+   v
+4. Effettua la Connessione AMQP:
+   - Crea la connessione al broker RabbitMQ
+   - Crea il canale di comunicazione
+   - Dichiarazione dell'exchange ("casette_sensori_exchange")
+   |
+   v
+5. Entra nel Ciclo Continuo ("While True"):
+      |
+      v
+   Per ogni Sensore nella Lista:
+      |
+      v
+      5.1 Ottieni i dati dal sensore:
+          - Chiama il metodo `ToJson()`
+      |
+      v
+      5.2 Invia i dati tramite AMQP:
+          - Costruisci la routing key basata sul nome del sensore
+          - Codifica i dati in UTF-8
+          - Pubblica il messaggio sull'exchange
+      |
+      v
+      5.3 Logga i dati inviati:
+          - Registra i dati nella console
+      |
+      v
+      5.4 Attendi 5 secondi:
+          - Pausa prima del prossimo sensore
+      |
+      v
+6. Gestione degli Errori:
+   - Log degli errori di connessione o invio
+   - Tentativi di riconnessione automatica
+   |
+   v
+7. Terminazione del Programma:
+   - Chiudi il canale
+   - Chiudi la connessione AMQP
