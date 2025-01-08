@@ -1,0 +1,35 @@
+1. INIZIO
+    |
+    v
+2. Avvia Server
+    |
+    v
+3. Connetti al Database MySQL
+    |
+    v
+4. Connetti a RabbitMQ
+    |
+    v
+5. Crea/Verifica Esistenza Code
+    |
+    v
+6. Consuma Messaggi
+    |
+    +------------------------------+
+    |                              |
+    v                              v
+ Messaggio: watertemp         Messaggio: lightstate
+    |                               |
+    v                               v
+ Analizza Temperatura         Salva Stato Luce
+    |                               |
+    v                               v
+ Salva Temperatura            Aggiorna o Inserisci 
+    |                               |
+    v                               v
+ Conferma Messaggio           Conferma Messaggio 
+    |                               |
+    +------------------------------+
+             |
+             v
+7. Server API REST in Esecuzione
